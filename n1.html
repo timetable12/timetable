@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+<?php
+
+  if(isset($_POST['submit']))
+{ for()
+    $sql = "INSERT INTO subfac ( subject, faculty)
+    VALUES (.$_POST["s1"]."','".$_POST["f1"]."')";
+
+    $result = mysqli_query($conn,$sql);
+}
+
+?>
+
+
+
+
+
+
+
+<form action="welcome.php" method="POST">
+Subject: <input type="text" name="s1">
+Faculty: <input type="text" name="f1"><br><br>
+Subject: <input type="text" name="s2">
+Faculty: <input type="text" name="f2"><br><br>
+Subject: <input type="text" name="s3">
+Faculty: <input type="text" name="f3"><br><br>
+Subject: <input type="text" name="s4">
+Faculty: <input type="text" name="f4"><br><br>
+Subject: <input type="text" name="s5">
+Faculty: <input type="text" name="f5"><br><br>
+<input type="submit" name="submit">
+</form>
+
+
+ 
+</body>
+</html>

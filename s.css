@@ -1,0 +1,38 @@
+
+ 	#demo{
+ 		 font-family: "Times New Roman", Times, serif;
+ 		 font-style:italic;
+         font-size: 50px;
+         text-align: center;
+         text-shadow: 2px;
+
+
+ 	}
+ 	#tt,#s1,#s2{
+ 		display: none;
+ 	}
+ 	{
+ 		display: none;
+ 	}
+ 	table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+    }
+    th{
+    	font-size: 40px;
+
+
+    }
+td{
+	text-align: center;
+	font-size: 25px;
+
+}
+button{
+border-radius:10px;
+border-bottom-width :9px;
+border-right-width: 9px;
+height :40px;
+
+}
