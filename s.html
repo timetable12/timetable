@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="s.css" >
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="s.js"></script>
+<title>My Page</title>
+</head>
+
+<body>
+	<br><br><br>
+   
+	<div id="demo"></div><br>
+   <center>
+	<button onclick="showbutton()">Set Time Table</button></br></br></br>
+	<div id ="s1">
+		<button onclick="showf()">M.Tech</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <button onclick="myfunc()">MCA</button>
+     </div><br><br><br>
+
+<div id="s2">
+	<h2>Enter Semester having 2 lab subjects</h2>
+	<div id="s21"></div>
+	<div id="s22">
+	<h2>SEMESTERS</h2>
+		<input type="text" id="1" name="sem1">
+		<input type="text" id="2" name="sem2">
+		<input type="text" id="3" name="sem3"><br>
+		<button onclick="tdisplay()">save</button>
+		</div>
+</div>
+		
+
+
+
+
+</div>
+
+
+<div id="tt">
+<table  id = 'table' width="60%">
+	
+	<tr>
+		<td style="font-size: 50px;font-weight: bold;">Day</td>
+		 <td style="font-size: 50px;font-weight: bold;">11:00-1:00</td>
+		 <td style="font-size: 50px;font-weight: bold;">1:00-3:00</td>
+		 <td style="font-size: 50px;font-weight: bold;">3:30-5:30</td>
+
+	</tr>
+
+	<tr>
+		<td>Mon-Tue</td>
+		 <td id="t0">empty slot</td>
+		 <td id="t3">6 sem</td>
+		 <td id="t6">Empty slot</td>
+
+	</tr>
+	
+	<tr>
+		<td>Wed-Thurs</td>
+		 <td id="t1" name = 'r'>2 sem</td>
+		 <td id="t4">8 sem</td>
+		 <td id="t7">Empty slot</td>
+
+	</tr>
+	
+	<tr>
+		<td>Fri-Sat</td>
+		 <td id="t2">4 sem</td>
+		 <td id="t5">10 sem</td>
+		 <td id="t8">Empty slot</td>
+
+	</tr>
+	</table><br><br><br>
+<button onclick="Prevfunc()">PREV</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   <button onclick="Okfunc()">OK</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+  <button onclick="NextFunc()">NEXT</button>
+	</div>
+ <div id ="d2"></div>
+ </center>
+ 
+
+</body>
+</html>
