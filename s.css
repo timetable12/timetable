@@ -8,14 +8,13 @@
 
 
  	}
- 	#tt,#s1,#s2{
+ 	#tt,#s2,#s1,#ss{
  		display: none;
  	}
- 	{
- 		display: none;
- 	}
- 	table,#a, td {
+ 	
+ 	table {
     border: 1px solid black;
+    width:80%;
     border-collapse: collapse;
     
     }
@@ -23,7 +22,7 @@
 td{
 	text-align: center;
 	font-size: 25px;
-
+     border: 1px solid black;
 }
 button{
 border-radius:10px;
