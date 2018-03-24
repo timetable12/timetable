@@ -56,15 +56,11 @@ src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	function hide(){
 	document.getElementById("ss").style.display ="inline";
 }
-
 var retrievedData = localStorage.getItem("q");
 var table = JSON.parse(retrievedData);
  	for(var i=0;i<9;i++){
-
  	 document.getElementById("t"+i).innerHTML = table[i];	
  	}
-
-
 	
 </script>
 

@@ -1,9 +1,35 @@
-  var sem =[];
+ 
+ var sem =[];
    $(document).ready(function() {
 
 
             /* This would select all the divisions */
            // $("div").css("background-color", "yellow");
+   var myTable = [];
+
+
+for (var i = 0; i<9; i++) {
+
+  myTable[i] = document.getElementById("t"+i).innerText;
+
+}
+
+
+if (typeof(Storage) !== "undefined") { 
+   
+    //localStorage["a"] = JSON.stringify(myTableArray);
+    localStorage.setItem("w", JSON.stringify(myTable));
+ 
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+  
+
+
+
+
+
+
     var dt = new Date();
 var s=dt.getMonth()+1;
 
@@ -90,11 +116,43 @@ var h =2;
 
 
 function NextFunc(){
+
+        var myArray = [];
+
+
+for (var i = 0; i<9; i++) {
+
+  myArray[i] = document.getElementById("t"+i).innerText;
+
+}
+
+
+if (typeof(Storage) !== "undefined") { 
+   
+    //localStorage["a"] = JSON.stringify(myTableArray);
+    localStorage.setItem("w", JSON.stringify(myArray));
+ 
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+  
    
     	   rearrange1();
     	   rearrange2();
     	   //rearrange3();
     }
+
+function Prevfunc(){
+
+  var retrievedData = localStorage.getItem("w");
+var table = JSON.parse(retrievedData);
+  for(var i=0;i<9;i++){
+   document.getElementById("t"+i).innerHTML = table[i]; 
+  }
+  
+
+
+}
 
 function rearrange1(){
 
@@ -158,7 +216,6 @@ function rearrange2()
  }
 
 /*function rearrange3(){
-
    for (var i=h ;i>=h;)
     {
         var temp = textarr[i];
@@ -167,7 +224,6 @@ function rearrange2()
      }
    
  //init();
-
     for (var i = 0; i <= 2; i++)
     {
     
@@ -197,6 +253,3 @@ if (typeof(Storage) !== "undefined") {
   
 
    }
-
-
-
