@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="" >
 
+<meta charset="utf-8">
+    
+
+    
+<link type="text/css" rel="stylesheet" href="s.css" >
+ <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="s.js"></script>
-<title>My Page</title>
+
 </head>
 
 <body>
 	<br><br><br>
    
-	<div id="demo"></div><br>
+	<div id="demo"   class="masthead-brand"></div><br>
    <center>
 	<button onclick="showbutton()">Set Time Table</button></br></br></br>
 	<div id ="s1">
@@ -28,10 +32,12 @@
 	<div id="s21"></div>
 	<div id="s22">
 	<h2>SEMESTERS</h2>
-		<input type="text" id="1" name="sem1">
-		<input type="text" id="2" name="sem2">
-		<input type="text" id="3" name="sem3"><br>
-		<button onclick="tdisplay()">save</button>
+		<form action="" onsubmit="tdisplay(); return false;"">
+		<input type="number" id="1" name="sem1" min="1" max="10" required>
+		<input type="number" id="2" name="sem2" min="1" max="10" required>
+		<input type="number" id="3" name="sem3"  min="1" max="10" required><br>
+		<input type ="submit"><br>
+		</form>
 		</div>
 </div>
 		
