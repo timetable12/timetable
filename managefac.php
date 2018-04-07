@@ -16,27 +16,35 @@
 <?php
 include "dbConfig.php";
 $result = mysqli_query($conn,"SELECT * FROM fac_load");
-
+$r1 =$result->num_rows;
+echo $r1;
 echo "<table border='1'>
 <tr>
 <th>Faculty ID</th>
 <th>Faculty Name</th>
 <th>Lectures Allocated</th>
+<th>Edit Option</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
 echo "<td>" . $row['fac_id'] . "</td>";
-
 echo "<td>" . $row['faculty_name'] . "</td>";
-
 echo "<td>" . $row['L_count'] . "</td>";
-echo "<td><button id="editid"; onclick="textEdit();">edit</button></td>";
-echo "</tr>";
+}
+for($i=1;$i<=$r1;$i++)
+{
+  echo "<td><button id=$i>edit</button></td>"; 
+  echo "</tr>";
 }
 echo "</table>";
-?>	
+
+?>
+
+
+
+
 </div>
 
 <!--<div>
@@ -88,7 +96,7 @@ No. of Lectures: <input type="text" name="L1"><br><br>
 	function updateFn(){
 		document.getElementById("fac_table").style.display ="inline";
 	}
-	function textEdit(){
+	function edit(){
 		document.getElementById("text_box").style.display ="inline";
 	}
 
