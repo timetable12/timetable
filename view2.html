@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>student view</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<script
+src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<style type="text/css">
+	#ss{
+
+		display: none;
+		width: 80%;
+		padding-left: 300px;
+	}
+	#q1{
+		width: 95%;
+		padding-left: 10px;
+	}
+    #qw{
+       padding-top:0px;
+    }
+    
+    
+    button{
+    	background-color:white ;
+    	color: black;
+    	border: none;
+    	width: 100% ;
+    	text-align: left;
+    	padding-left: 20px;
+
+    }
+    .dropdown #m{ min-width:60px; }
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top:15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+ 
+   
+</style>
+</head>
+<body>
+	
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">Time Table Generation System</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+       
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><button onclick="toggle()">Lab TimeTable </button></li>
+          <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">Semester TimeTable <span class="caret"></span></a>
+        <ul id="m" class="dropdown-menu">
+          <li><a id="1" href="#"></a></li>
+          <li><a id="2" href="#"></a></li>
+          <li><a id="3" href="#"></a></li>
+          <li><a id="4" href="#"></a></li>
+          <li><a id="5" href="#"></a></li>
+          <li><a  id="6" href="#"></a></li>
+         
+          
+        </ul>
+      </li>
+          
+        </ul>
+      </li>
+     
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li ><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+      
+    </ul>
+  </div>
+</nav>
+<div id="ss"><br><br>
+	  <div  class="page-header">
+  <h1 >Lab TimeTable</h1>
+</div>   
+	<div class="table-responsive" >
+<table class="table table-hover">
+	
+	<tr>
+		<td style="font-size: 30px;font-weight: bold;">Day</td>
+		 <td style="font-size: 30px;font-weight: bold;">11:00-1:00</td>
+		 <td style="font-size: 30px;font-weight: bold;">1:00-3:00</td>
+		 <td style="font-size: 30px;font-weight: bold;">3:30-5:30</td>
+
+	</tr>
+
+	<tr>
+		<td>Mon-Tue</td>
+		 <td id="t0"></td>
+		 <td id="t3"></td>
+		 <td id="t6"></td>
+
+	</tr>
+	
+	<tr>
+		<td>Wed-Thurs</td>
+		 <td id="t1"></td>
+		 <td id="t4"></td>
+		 <td id="t7"></td>
+
+	</tr>
+	
+	<tr>
+		<td>Fri-Sat</td>
+		 <td id="t2"></td>
+		 <td id="t5"></td>
+		 <td id="t8"></td>
+
+	</tr>
+	</table>
+</div></div></div>
+</center>
+</div>
+ <script type="text/javascript" >
+
+	var dt = new Date();
+var s=dt.getMonth()+1;
+if((s<=6)&&(s>1))
+ {  
+    for (var i = 1; i <6; i++) {
+     document.getElementById(i).innerHTML = "Sem" + 2*i; 
+    
+ }}
+  else
+    {
+    	for (var i = 0; i <5; i++){
+     document.getElementById(i).innerHTML ="Sem"+ 2*i+1;
+     }
+}
+	
+	$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+
+var retrievedData = localStorage.getItem("q");
+var table = JSON.parse(retrievedData);
+ 	for(var i=0;i<9;i++){
+
+ 	 document.getElementById("t"+i).innerHTML = table[i];	
+ 	}
+
+  function toggle() {
+  document.getElementById('ss').style.display = "block";
+}
+
+
+
+</script>
+</body>
+</html>
