@@ -15,10 +15,10 @@ echo $name,$lect;
 }
 if(isset($_POST['update']))
 {
-	$id=$_POST['I'];
-	$name=$_POST['F'];
-	$sem=$_POST['L'];
-   $res= mysqli_query($conn,"UPDATE semester_sub SET subject_id='$id',semester_name='$name',semester='$sem'WHERE subject_id='$id'");
+	$id1=$_POST['I2'];
+	$name1=$_POST['F2'];
+	$sem1=$_POST['L2'];
+   $res= mysqli_query($conn,"UPDATE semester_sub SET subject_id='$id1',semester_name='$name1',semester='$sem1'WHERE subject_id='$id1'");
 }
 ?>
 <!DOCTYPE html>
@@ -85,9 +85,9 @@ echo "</table>";
 </div>
 <div id="text_box"><!--table for updation-->
 	<form action="" method="POST">
- Subject ID<input type="text" name="I" id="sid"><br><br>
- Subject Name: <input type="text" name="F" id="sname"><br><br>
- Semester: <input type="text" name="L" id="sem"><br><br>
+ Subject ID<input type="text" name="I2" id="sid"><br><br>
+ Subject Name: <input type="text" name="F2" id="sname"><br><br>
+ Semester: <input type="text" name="L2" id="sem"><br><br>
 <input type="submit" name="update" value="UPDATE">
 </form>
 </div>
