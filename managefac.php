@@ -6,10 +6,10 @@ if(isset($_POST['Submit']))
 	$no=$_POST['no'];
 	for($i=0;$i<$no;$i++)
    {		
-	$name=$_POST['names'.$i];
-	$lect=$_POST['lectures'.$i];
-echo $name,$lect;
-   $res= mysqli_query($conn,"INSERT INTO fac_load(faculty_name,L_count)VALUES('$name','$lect')");
+	$name1=$_POST['names'.$i];
+	$lect1=$_POST['lectures'.$i];
+    $res= mysqli_query($conn,"INSERT INTO fac_load VALUES('','$name1','$lect1')");
+
 }
 }
 if(isset($_POST['update']))
@@ -17,8 +17,7 @@ if(isset($_POST['update']))
 	$id=$_POST['I1'];
 	$name=$_POST['F1'];
 	$lect=$_POST['L1'];
-   $res= mysqli_query($conn,"UPDATE fac_load SET faculty_name='$name',L_count='$lect' 
-   	WHERE fac_id='$id'");
+    $res= mysqli_query($conn,"UPDATE fac_load SET faculty_name='$name',L_count='$lect'WHERE fac_id='$id'");
 }
 ?>
 <!DOCTYPE html>
