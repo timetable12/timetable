@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="n1.css">
+</head>
+<body>
+  <script type="text/javascript">
+    
 
-<script type="text/javascript">
-	var arr =[];
-	var js1,yu;
-
-
+  var arr =[];
+  var js1,yu;
 function firstFunc(myid)
   { js1 =myid; 
-  	
+    
   <?php  $myPhpVar ="<script>document.writeln(js1);</script>" ?>
-
 }
 function secFunc()
 {
-	document.getElementById("form").style.display ='inline';
-
-
+  document.getElementById("form").style.display ='inline';
 if(js1<=4)
 {
 document.getElementById("tab1").style.display ="none";
 }
 else
 {
-document.getElementById("tab2").style.display ="none";	
+document.getElementById("tab2").style.display ="none";  
 }
-
 }
-
-
-
 function f(){
           
    document.getElementById("form").style.display ="none";       
@@ -41,11 +36,11 @@ document.getElementById("tab1").style.display ="inline";
 }
 else
 {
-document.getElementById("tab2").style.display ="inline";	
+document.getElementById("tab2").style.display ="inline";  
 }
 var yu;
 for (var i =0; i <= 4; i++) {
-  	 var e = document.getElementById("sub"+i);
+     var e = document.getElementById("sub"+i);
       yu= e.options[e.selectedIndex].text;
        arr[i] =yu;
      
@@ -55,13 +50,10 @@ for (var i =0; i <= 4; i++) {
      document.getElementById("t2").innerHTML =arr[4];
      document.getElementById("t6").innerHTML =arr[4];
      document.getElementById("t7").innerHTML =arr[4];
-
      document.getElementById("t3").innerHTML =arr[3];
      document.getElementById("t23").innerHTML =arr[3];
      document.getElementById("t8").innerHTML =arr[3];
      document.getElementById("t28").innerHTML =arr[3];
-
-
     document.getElementById("t4").innerHTML =arr[2];
      document.getElementById("t9").innerHTML =arr[2];
      document.getElementById("t14").innerHTML =arr[2];
@@ -71,71 +63,19 @@ for (var i =0; i <= 4; i++) {
      document.getElementById("t10").innerHTML =arr[1];
      document.getElementById("t24").innerHTML =arr[1];
      document.getElementById("t29").innerHTML =arr[1];
-
     
     document.getElementById("t15").innerHTML =arr[0];
      document.getElementById("t20").innerHTML =arr[0];
      document.getElementById("t25").innerHTML =arr[0];
      document.getElementById("t30").innerHTML =arr[0];
       
-
-
-
-
 }
-
-
- </script>
-
+ 
 
 
 
-
-<style type="text/css">
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-#form ,#tab1, #tab2{
-	display:none;
-}
-
-	
-</style>
-
-
-
-
-
-
-</head>
-<body>
-	<div id="nav-bar">
+  </script>
+<div id="nav-bar">
 		<ul >
   <li><a class="active" href="#home">Home</a></li>
   <li ><button id="1" onclick= "firstFunc(this.id);secFunc();">SEM 1</button></li>
@@ -229,31 +169,7 @@ li a:hover:not(.active) {
 <br><br><br><br><br><div id="form">
 <?php
  include "dbConfig.php";
- /*$table =$_GET['table'];
-
-    $result =mysqli_query($conn,"SELECT * FROM $table ");
-    $row =$result->num_rows;
-       $r=$result->fetch_assoc();
-       $s1=$r['subject_name'];
-       $f1=$r['faculty_name'];
-
-       $r=$result->fetch_assoc();
-       $s2=$r['subject_name'];
-       $f2=$r['faculty_name'];
-
-       $r=$result->fetch_assoc();
-       $s3=$r['subject_name'];
-       $f3=$r['faculty_name'];
-
-       $r=$result->fetch_assoc();
-       $s4=$r['subject_name'];
-       $f4=$r['faculty_name'];
-
-       $r=$result->fetch_assoc();
-       $s5=$r['subject_name'];
-       $f5=$r['faculty_name'];
-    */
-
+ 
  mysqli_select_db($conn, "timetable");
 $sql = "SELECT * FROM fac_load";
  $query = mysqli_query($conn, $sql);
@@ -266,18 +182,13 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['faculty_name'] . "'>" . $row['faculty_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 
 
 <?php 
  
-
  $sql = "SELECT subject_name FROM semester_sub where semester = '$myPhpVar'";
  $query = mysqli_query($conn, $sql);
   
@@ -288,12 +199,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['subject_name'] . "'>" . $row['subject_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
  
 <?php 
@@ -308,12 +215,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['faculty_name'] . "'>" . $row['faculty_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 <?php
  $sql = "SELECT subject_name FROM semester_sub where semester ='$myPhpVar'";
@@ -327,12 +230,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['subject_name'] . "'>" . $row['subject_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 
 
@@ -347,12 +246,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['faculty_name'] . "'>" . $row['faculty_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 <?php
  $sql = "SELECT subject_name FROM semester_sub where semester ='$myPhpVar'";
@@ -366,12 +261,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['subject_name'] . "'>" . $row['subject_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 
 
@@ -386,12 +277,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['faculty_name'] . "'>" . $row['faculty_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 <?php
  $sql = "SELECT subject_name FROM semester_sub where semester ='$myPhpVar'";
@@ -405,12 +292,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['subject_name'] . "'>" . $row['subject_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 
 
@@ -426,12 +309,8 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['faculty_name'] . "'>" . $row['faculty_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 <?php
  $sql = "SELECT subject_name FROM semester_sub where semester ='$myPhpVar'";
@@ -445,46 +324,12 @@ $sql = "SELECT * FROM fac_load";
  {   
      echo "<option value'" . $row['subject_name'] . "'>" . $row['subject_name'].     
 "</option>";
-
-
 }
       echo "</select>";
-
-
 ?>
 
 <br><br><br><br><br><button onclick="f()">create timetable</button>
-
-
-
 </div>
-
-
-
-
-<!--
-<form action="welcome.php" method="POST">
-Subject: <input type="text" name="s1" value="<?php echo $s1; ?>">
-Faculty: <input type="text" name="f1" value="<?php echo $f1; ?>"><br><br>
-Subject: <input type="text" name="s2" value="<?php echo $s2; ?>">
-Faculty: <input type="text" name="f2" value="<?php echo $f2; ?>"><br><br>
-Subject: <input type="text" name="s3" value="<?php echo $s3; ?>">
-Faculty: <input type="text" name="f3" value="<?php echo $f3; ?>"><br><br>
-Subject: <input type="text" name="s4" value="<?php echo $s4; ?>">
-Faculty: <input type="text" name="f4" value="<?php echo $f4; ?>"><br><br>
-Subject: <input type="text" name="s5" value="<?php echo $s5; ?>">
-Faculty: <input type="text" name="f5" value="<?php echo $f5; ?>"><br><br>
-<input type="submit" name="submit">
-</form>
-
-
-<select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option>
-</select>
--->
 <div id="text_box">
 Faculty Id: <input type="text" name="I1"><br><br>
 Faculty Name: <input type="text" name="F1"><br><br>
