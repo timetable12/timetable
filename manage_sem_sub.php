@@ -1,6 +1,5 @@
 <?php
 include "dbConfig.php";
-
 if(isset($_POST['Submit']))
 { 
 	$no=$_POST['no'];
@@ -56,12 +55,10 @@ for($i=1;$i<=$r1;$i++)
  
 echo "</tr>";
 echo "</table>";
-
 ?>
 </div>
 <div id="rem_table">
 <?php
-
 $result = mysqli_query($conn,"SELECT * FROM semester_sub");
 $r1 =$result->num_rows;
 echo "<table border='1'>

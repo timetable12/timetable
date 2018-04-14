@@ -34,5 +34,5 @@ function s1(myid,name,sem){//getting values for updation
     document.getElementById("text_box").style.display ="inline";
     document.getElementById("sid").value =myid;
     document.getElementById("sname").value =name;
-    document.getElementById("sem").value =sem;
+document.getElementById("sem").value =sem;
   }

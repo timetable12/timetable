@@ -35,5 +35,5 @@ function f1(myid,name,Lectures){//getting values for updation
     document.getElementById("text_box").style.display ="inline";
     document.getElementById("id").value =myid;
     document.getElementById("name").value =name;
-    document.getElementById("lect").value =Lectures;
+document.getElementById("lect").value =Lectures;
   }
