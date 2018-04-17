@@ -8,7 +8,7 @@ if(isset($_POST['Submit']))
    {		
 	$name1=$_POST['names'.$i];
 	$lect1=$_POST['lectures'.$i];
-    $res= mysqli_query($conn,"INSERT INTO fac_load VALUES('','$name1','$lect1')");
+    $res= mysqli_query($conn,"INSERT INTO fac_load VALUES('','$name1','$lect1-')");
 
 }
 }

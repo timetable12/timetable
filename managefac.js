@@ -13,21 +13,17 @@ function updateFn(){
            document.write('<td ><input type="text" name ="names'+i+'"></td>');
            document.write('<td ><input type="text" name ="lectures'+i+'"></td></tr>');
          }
-        document.write('</table><br><input type="submit" value ="Submit"></form>');	
+        document.write('</table><br><input type="submit" name ="Submit"></form>');	
      }
 
 function removeFn(){
 		document.getElementById("rem_table").style.display ="inline";
 	}
 function r1(myid){//getting values for deletion
-    $.ajax({
-      type: "POST",
-      url: 'AjaxCall.php',
-      data: ({idValue:"myid"}),
-      success: function(data) {
-        alert(data);
-      }
-    });
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET","AjaxCall.php?id="+myid, true);
+    xmlhttp.send();
+     location.reload();
 }
 
 
@@ -35,5 +31,5 @@ function f1(myid,name,Lectures){//getting values for updation
     document.getElementById("text_box").style.display ="inline";
     document.getElementById("id").value =myid;
     document.getElementById("name").value =name;
-document.getElementById("lect").value =Lectures;
+    document.getElementById("lect").value =Lectures;
   }
